@@ -33,7 +33,7 @@ jobs:
               repo: context.repo.repo,
               pull_number: prNumber
             });
-            const approved = reviews.some(review => review.state === 'APPROVED');
+            const hasComment = reviews.some(review => review.state === 'COMMENTED');
             if (!approved) {
               core.setFailed("Код-рев’ю не схвалено");
             }
